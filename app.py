@@ -171,7 +171,7 @@ def speak_text(response):
 
 # Function to send a message to chatbot
 def send_message(user_input):
-    """Sends a message to the chatbot and updates the chat history."""
+    
     if prompt := st.chat_input(user_input):
     # Display user message in chat message container
         with st.chat_message("user"):
@@ -180,8 +180,6 @@ def send_message(user_input):
         response = st.write(generate_response(user_input))
         with st.chat_message("assistant"):
             st.markdown(response)
-        # Clear the input field
-        st.session_state.user_input = ""
 
         
 # Function to clear the chat history
@@ -231,7 +229,15 @@ def main():
         input_col1, input_col2, input_col3 = st.columns([8, 1, 1], vertical_alignment="bottom")
 
         with input_col1:
-            user_input = st.text_input("", placeholder="Type your message...", key="input_text")
+            
+            if user_input := st.chat_input("Type your message..."):
+            # Display user message in chat message container
+                with st.chat_message("user"):
+                   st.markdown(user_input)
+                # Generate response from the chatbot
+                response = generate_response(user_input)
+                with st.chat_message("assistant"):
+                   st.markdown(response)
 
         with input_col2:
             if st.button("🎤", key="mic_button"):
