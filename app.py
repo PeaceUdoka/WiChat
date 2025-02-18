@@ -220,18 +220,29 @@ def main():
                    st.write(response)
 
         if audio_value := st.audio_input(label=""):
+              
 
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
       
               user_input = transcript.text
+            # Accessing the saved audio later in your app:
+
+            
                 # Display user message in chat message container
               with st.chat_message("user"):
                    st.write(user_input)
                 # Generate response from the chatbot
               response = generate_response(user_input)
+              if "recorded_audio" in st.session_state:
+
+                aud = gTTS(text = response,lang = 'en') 
+                audio_value = aud.save("response.mp3')
+                st.session_state["recorded_audio"] = audio_value
+                st.audio(st.session_state["recorded_audio"])
               with st.chat_message("assistant"):
                    st.write(response)
-              speak_text(response)
+                  
+              
 
     
                 
