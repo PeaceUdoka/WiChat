@@ -234,10 +234,9 @@ def main():
                    st.write(user_input)
                 # Generate response from the chatbot
               response = generate_response(user_input)
-              if "recorded_audio" in st.session_state:
+              resp_aud = client.audio.speech.create(model="tts-1",voice="shimmer",input=response)
 
-                st.session_state["recorded_audio"] = speak_text(response)
-                st.audio(st.session_state["recorded_audio"])
+              resp_aud.stream_to_file("output.mp3")
               with st.chat_message("assistant"):
                    st.write(response)
                   
