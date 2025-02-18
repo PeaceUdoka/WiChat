@@ -130,14 +130,17 @@ def startup_screen():
 def login_screen():
     st.title("Login")
 
-    username_input = st.text_input("Username")
-    password_input = st.text_input("Password", type="password")
+    # Add unique keys to each input field
+    username = st.text_input("Username", key="login_username")
+    password = st.text_input("Password", type="password", key="login_password")
 
+    # Login button
+    login_button = st.button("Login", key="login_button")
     login_button = st.button("Login")
 
     if login_button:
 
-        if username_input and password_input:
+        if username and password:
             st.success("Logged in successfully!")
             st.session_state.current_screen = "main"  # Switch to main screen on successful login
             st.rerun()
