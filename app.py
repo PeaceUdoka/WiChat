@@ -82,7 +82,7 @@ contextualize_q_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-st.session_state.chat_history = {}
+
 
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in st.session_state.chat_history:
@@ -173,14 +173,9 @@ def speak_text(response):
 def send_message(user_input):
     """Sends a message to the chatbot and updates the chat history."""
     if user_input:
-        # Append user message to the chat history
-        st.session_state.chat_history.add_user_message(user_input)
 
         # Generate response from the chatbot
         response = st.write_stream(generate_response(user_input))
-
-        # Append chatbot response to the chat history
-        st.session_state.chat_history.add_ai_message(response)
 
         # Clear the input field
         st.session_state.user_input = ""
