@@ -148,16 +148,6 @@ def menu_callback(option):
 
 
 
-# Function to record audio
-def record_audio():
-    """Records audio, converts it to text, and updates the input field."""
-    audio_value = st.audio_input("")
-
-    if audio_value:
-      transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
-      
-    return transcript.text
-
 # Function to speak text
 def speak_text(response):
     """Converts text to speech using pyttsx3."""
@@ -225,20 +215,25 @@ def main():
                    st.markdown(response)
 
         with input_col2:
-            if st.button("🎤", key="mic_button"):
+            
+            audio_value = st.audio_input()
+
+            if audio_value:
+              transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
+      
+              user_input = transcript.text
                 
-                user_input = record_audio()
                  # Display user message in chat message container
-                with st.chat_message("user"):
+              with st.chat_message("user"):
                    st.markdown(user_input)
                 # Generate response from the chatbot
-                response = generate_response(user_input)
-                with st.chat_message("assistant"):
+              response = generate_response(user_input)
+              with st.chat_message("assistant"):
                    st.markdown(response)
                    speak_text(response)
         with input_col3:
-            if st.button("FIle"):
-                send_message(user_input)
+            if st.file_uploader():
+                
 
 
     elif st.session_state.current_screen == "login":
