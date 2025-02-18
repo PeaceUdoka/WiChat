@@ -214,12 +214,8 @@ def main():
                 show_menu()
       
 
-        # Input section
-        input_col1, input_col2 = st.columns([8,2], vertical_alignment="bottom")
-
-        with input_col1:
-            
-          if user_input := st.chat_input("Type your message..."):
+       
+        if user_input := st.chat_input("Type your message..."):
             with st.chat_message("user"):
                    st.markdown(user_input)
  
@@ -228,9 +224,7 @@ def main():
             with st.chat_message("assistant"):
                    st.markdown(response)
 
-        with input_col2:
-          
-            audio_value = st.audio_input(label="")
+       audio_value = st.audio_input(label="")
 
             if audio_value:
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
