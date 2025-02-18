@@ -131,11 +131,10 @@ def login_screen():
     st.title("Login")
 
     # Add unique keys to each input field
-    username = st.text_input("Username", key="login_username")
-    password = st.text_input("Password", type="password", key="login_password")
+    username = st.text_input("Username")
+    password = st.text_input("Password")
 
     # Login button
-    login_button = st.button("Login", key="login_button")
     login_button = st.button("Login")
 
     if login_button:
@@ -158,10 +157,10 @@ def signup_screen():
     st.title("Sign Up")
 
     # Input fields for signup
-    username = st.text_input("Username", key="signup_username")
-    password = st.text_input("Password", type="password", key="signup_password")
-    confirm_password = st.text_input("Confirm Password", type="password", key="signup_confirm_password")
-    email = st.text_input("Email", key="signup_email")
+    username = st.text_input("Username")
+    password = st.text_input("Password")
+    confirm_password = st.text_input("Confirm Password")
+    email = st.text_input("Email")
 
     signup_button = st.button("Sign Up")
 
