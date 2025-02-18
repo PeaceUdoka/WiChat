@@ -203,7 +203,7 @@ def main():
     # Render UI based on the current screen
     if st.session_state.current_screen == "main":
         st.title("WiChat")
-        st.logo(logo, size="medium")
+        st.logo(logo, size="large")
 
 
         # Welcome Card
