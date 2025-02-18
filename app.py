@@ -243,13 +243,10 @@ def main():
                 if st.file_uploader(label = "", label_visibility = "hidden", help=None):
                     pass
                     
-        for message in st.session_state.chat_history["1"].messages:
-            if isinstance(message, AIMessage):
-                prefix = "AI"
-            else:
-                prefix = "User"
-
-            print(f"{prefix}: {message.content}\n")
+        # Display chat messages from history on app rerun
+        for message in st.session_state.chat_history:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
  
     elif st.session_state.current_screen == "login":
         # Render login screen
