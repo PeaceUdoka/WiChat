@@ -245,7 +245,7 @@ def main():
                   
         with input_col3:
             if st.button(label = "",icon="📎"):
-                if st.file_uploader(label = "", label_visibility = "hidden", help=None):
+                if st.file_uploader(label = "", label_visibility = "hidden", help=None, use_container_width=True):
                     pass
                     
  
