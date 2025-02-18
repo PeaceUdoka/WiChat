@@ -206,11 +206,11 @@ def main():
       
 
         # Input section
-        input_col1, input_col2, input_col3 = st.columns(3, vertical_alignment="bottom")
+        input_col1, input_col2, input_col3 = st.columns([8,1,1], vertical_alignment="bottom")
 
         with input_col1:
             
-            if user_input := st.chat_input("Type your message...", use_container_width=True):
+            if user_input := st.chat_input("Type your message..."):
             # Display user message in chat message container
                 with st.chat_message("user"):
                    st.markdown(user_input)
