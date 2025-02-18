@@ -244,7 +244,7 @@ def main():
                    speak_text(response)
                   
         with input_col3:
-            with st.button(icon="📎"):
+            with st.button(label = "",icon="📎"):
                 if st.file_uploader(label = "", label_visibility = "hidden", help=None):
                     pass
                     
