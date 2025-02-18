@@ -1,0 +1,11 @@
+streamlit
+langchain
+transformers
+langchain-community
+unstructured
+sentence-transformers
+faiss-cpu
+langchain_openai
+openai
+pyttsx3 
+SpeechRecognition
