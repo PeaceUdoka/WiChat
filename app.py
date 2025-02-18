@@ -154,7 +154,7 @@ def menu_callback(option):
 # Function to speak text
 def speak_text(text):
     aud = gTTS(text = text,lang = 'en') 
-    aud.save("response.mp3") 
+    sound_file = aud.save("response.mp3") 
     Audio(sound_file, autoplay=True)
     st.audio('response.mp3')
 
@@ -235,9 +235,7 @@ def main():
               response = generate_response(user_input)
               if "recorded_audio" in st.session_state:
 
-                aud = gTTS(text = response,lang = 'en') 
-                audio_value = aud.save("response.mp3')
-                st.session_state["recorded_audio"] = audio_value
+                st.session_state["recorded_audio"] = speak_text(response)
                 st.audio(st.session_state["recorded_audio"])
               with st.chat_message("assistant"):
                    st.write(response)
