@@ -178,7 +178,7 @@ def main():
          st.session_state.db = store_data(st.session_state.data, embeddings)
 
     if 'client' not in st.session_state:
-    st.session_state.client = OpenAI(api_key = st.secrets["OPENAI_API_KEY"])
+        st.session_state.client = OpenAI(api_key = st.secrets["OPENAI_API_KEY"])
     
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
