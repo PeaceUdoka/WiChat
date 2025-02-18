@@ -183,6 +183,11 @@ def main():
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
 
+     # Display chat messages from history on app rerun
+    for message in st.session_state.chat_history:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+                
     if 'current_screen' not in st.session_state:
       startup_screen()
     elif st.session_state.current_screen == "startup":
@@ -243,10 +248,6 @@ def main():
                 if st.file_uploader(label = "", label_visibility = "hidden", help=None):
                     pass
                     
-        # Display chat messages from history on app rerun
-        for message in st.session_state.chat_history:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
  
     elif st.session_state.current_screen == "login":
         # Render login screen
