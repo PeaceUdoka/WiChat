@@ -214,8 +214,7 @@ def main():
             # Display user message in chat message container
                 with st.chat_message("user"):
                    st.markdown(user_input)
-                    
-                    message(user_input, is_user=True) 
+                   message(user_input, is_user=True) 
  
                 # Generate response from the chatbot
                 response = generate_response(user_input)
