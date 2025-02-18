@@ -191,7 +191,7 @@ def main():
         st.session_state.chat_history = {}
 
      # Display chat messages from history on app rerun
-    for message in st.session_state.chat_history:
+    for message in st.session_state.chat_history["1].messages:
             with st.chat_message("user"):
                    st.markdown(message.content)
             with st.chat_message("assistant"):
