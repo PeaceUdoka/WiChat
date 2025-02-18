@@ -159,7 +159,7 @@ def speak_text(text):
     input=text, # the text to generate speech from
     speed=1.0, # the speed of the generated speech, ranging from 0.25 to 4.0
     )
-    return response
+    return response.stream_to_file(response.mp3)
 
 
 
