@@ -45,8 +45,6 @@ def embed(data, device, model):
 
 
 path = 'scraped_data'
-docs = load_data(path)
-data = get_chunks(docs)
 
 
 def store_data(data, embeddings):
@@ -54,8 +52,6 @@ def store_data(data, embeddings):
   db = FAISS.from_documents(data, embeddings)
   return db
 
-embeddings = embed(data, 'cpu', 'sentence-transformers/all-MiniLM-L6-v2')
-db = store_data(data, embeddings)
 
 # cache the model
 @st.cache_resource
@@ -87,11 +83,8 @@ contextualize_q_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-### manage chat history ###
 
-st.session_state.chat_history = {}
-
-def get_session_history(session_id: str):
+def get_session_history(session_id):
     if session_id not in st.session_state.chat_history:
         st.session_state.chat_history[session_id] = ChatMessageHistory()
     return st.session_state.chat_history[session_id]
@@ -212,6 +205,13 @@ def main():
 
     # Initialize session state
 
+     if 'data' not in st.session_state:
+         st.session_state.data ==  get_chunks(load_data(path)):
+    
+    if 'db' not in st.session_state:
+         embeddings = embed(st.session_state.data, 'cpu', 'sentence-transformers/all-MiniLM-L6-v2')
+         st.session_state.db == store_data(data, embeddings):
+    
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
 
