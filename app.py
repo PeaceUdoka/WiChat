@@ -239,7 +239,7 @@ def main():
                    speak_text(response)
                
                   
-    pg = st.navigation([st.Page("pages/login.py"), st.Page("pages/signup.py")])
+    pg = st.navigation([st.Page("app.py"), st.Page("pages/login.py"), st.Page("pages/signup.py")])
     pg.run()
  
 
