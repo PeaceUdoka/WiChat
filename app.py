@@ -232,7 +232,7 @@ def main():
                    st.markdown(response)
                    speak_text(response)
         with input_col3:
-            if st.file_uploader():
+            if st.file_uploader(label = "📎"):
                 pass
 
 
