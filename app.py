@@ -206,25 +206,23 @@ def main():
       
 
         # Input section
-        input_col1, input_col2, input_col3 = st.columns([8, 1, 1], vertical_alignment="bottom")
+        input_col1, input_col2, input_col3 = st.columns(3, vertical_alignment="bottom")
 
         with input_col1:
             
-            if user_input := st.chat_input("Type your message..."):
+            if user_input := st.chat_input("Type your message...", use_container_width=True):
             # Display user message in chat message container
                 with st.chat_message("user"):
                    st.markdown(user_input)
-                   message(user_input, is_user=True) 
  
                 # Generate response from the chatbot
                 response = generate_response(user_input)
                 with st.chat_message("assistant"):
                    st.markdown(response)
-                   message(response)
 
         with input_col2:
           
-            audio_value = st.audio_input(label="")
+            audio_value = st.audio_input(label="", use_container_width=True)
 
             if audio_value:
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
@@ -239,11 +237,19 @@ def main():
               with st.chat_message("assistant"):
                    st.markdown(response)
                    speak_text(response)
+                  
         with input_col3:
-            with st.button("📎"):
+            with st.button(icon="📎", use_container_width=True):
                 if st.file_uploader(label = "", label_visibility = "hidden", help=None):
                     pass
+                    
+        for message in st.session_state.chat_history["1"].messages:
+            if isinstance(message, AIMessage):
+                prefix = "AI"
+            else:
+                prefix = "User"
 
+            print(f"{prefix}: {message.content}\n")
  
     elif st.session_state.current_screen == "login":
         # Render login screen
