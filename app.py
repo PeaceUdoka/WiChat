@@ -232,7 +232,7 @@ def main():
         st.markdown("<div style='background-color: black; padding: 10px; border-radius: 10px;'><h4>Welcome!!! What would you like to know? </h4></div>", unsafe_allow_html=True)
 
        # Chat Display
-        session_id = "1"  # Replace with a dynamic session ID if needed
+        session_id = 1  # Replace with a dynamic session ID if needed
         st.session_state.chat_history = get_session_history(session_id).messages
 
         # Display chat messages from history on app rerun
