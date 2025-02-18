@@ -109,6 +109,8 @@ conversational_rag_chain = RunnableWithMessageHistory(
 def generate_response(query):
     return conversational_rag_chain.invoke({"input": query}, config={"configurable": {"session_id": "1"}})["answer"]
 
+logo = "Wichat2.png"
+
 # Startup Screen
 def startup_screen():
     st.title("WiChat")
@@ -157,19 +159,16 @@ def account_callback(option):
 # Function to record audio
 def record_audio():
     """Records audio, converts it to text, and updates the input field."""
-    recognizer = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.write("Listening...")
-        try:
-            audio = recognizer.listen(source, timeout=5)
-            user_input = recognizer.recognize_google(audio)
+    audio_value = st.audio_input("record a voice message to transcribe")
 
-        except sr.UnknownValueError:
-            st.error("Could not understand audio.")
-        except sr.RequestError as e:
-            st.error(f"Speech Recognition service error: {e}")
+    if audio_value:
+      transcript = client.audio.transcriptions.create(
+        model="whisper-1",
+        file = audio_value
+      )
 
-        return user_input
+    user_input = transcript.text
+    return user_input
 
 # Function to speak text
 def speak_text(response):
@@ -194,7 +193,8 @@ def send_message(user_input):
         # Clear the input field
         st.session_state.user_input = ""
 
-        return(response)
+        return response
+        
 # Function to clear the chat history
 def clear_chat():
     """Clears the chat history."""
@@ -226,6 +226,7 @@ def main():
     # Render UI based on the current screen
     if st.session_state.current_screen == "main":
         st.title("WiChat")
+        st.logo(logo, size="medium")
 
 
         # Welcome Card
@@ -258,6 +259,7 @@ def main():
 
         with input_col2:
             if st.button("🎤", key="mic_button"):
+                
                 user_input = record_audio()
                 response = send_message(user_input)
                 speak_text(response)
