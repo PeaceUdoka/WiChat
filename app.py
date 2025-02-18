@@ -240,7 +240,7 @@ def main():
                    st.markdown(response)
                    speak_text(response)
         with input_col3:
-            with sp.expander("📎")
+            with sp.expander("📎"):
                 if st.file_uploader(label = "", help=None):
                     pass
 
