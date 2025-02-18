@@ -190,12 +190,7 @@ def main():
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
         # Display chat messages from history on app rerun
-    if st.session_state.chat_history:
-        for message in st.session_state.chat_history["1"].messages:
-            with st.chat_message("user"):
-                   st.markdown(message.content)
-            with st.chat_message("assistant"):
-                   st.markdown(message.content)
+    
                 
     if 'current_screen' not in st.session_state:
       startup_screen()
