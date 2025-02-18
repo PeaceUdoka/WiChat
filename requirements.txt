@@ -1,5 +1,5 @@
 streamlit
-streamlit-chat
+gTTS
 langchain
 transformers
 langchain-community
@@ -8,5 +8,4 @@ sentence-transformers
 faiss-cpu
 langchain_openai
 openai
-pyttsx3 
-streamlit-webrtc
+
