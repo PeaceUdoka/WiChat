@@ -234,7 +234,7 @@ def main():
               response = generate_response(user_input)
               with st.chat_message("assistant"):
                    st.write(response)
-                   speak_text(response)
+              speak_text(response)
 
     
                 
