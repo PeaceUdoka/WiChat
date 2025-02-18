@@ -279,7 +279,7 @@ def main():
 
 
         # Welcome Card
-        st.markdown("<div style='background-color: white; padding: 10px; border-radius: 10px;'><h4>Welcome!!! What would you like to know? </h4></div>", unsafe_allow_html=True)
+        st.markdown("<div style='background-color: black; padding: 10px; border-radius: 10px;'><h4>Welcome!!! What would you like to know? </h4></div>", unsafe_allow_html=True)
 
        # Chat Display
         session_id = "1"  # Replace with a dynamic session ID if needed
