@@ -154,12 +154,9 @@ def record_audio():
     audio_value = st.audio_input("record a voice message to transcribe")
 
     if audio_value:
-      transcript = client.audio.transcriptions.create(
-        model="whisper-1",
-        file = audio_value
-      )
+      transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
 
-    user_input = transcript.text
+      user_input = transcript.text
     return user_input
 
 # Function to speak text
