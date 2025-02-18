@@ -1,5 +1,5 @@
 
-import openai
+from openai import OpenAI
 import os
 import pyttsx3
 import streamlit as st
