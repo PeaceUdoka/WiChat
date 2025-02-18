@@ -10,3 +10,4 @@ openai
 pyttsx3 
 SpeechRecognition
 PyAudio
+streamlit-webrtc
