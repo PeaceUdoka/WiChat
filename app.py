@@ -216,7 +216,7 @@ def main():
 
         with input_col2:
             
-            audio_value = st.audio_input(label="🎤")
+            audio_value = st.audio_input(label="")
 
             if audio_value:
               transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
@@ -232,7 +232,7 @@ def main():
                    st.markdown(response)
                    speak_text(response)
         with input_col3:
-            if st.file_uploader(label = "📎"):
+            if st.file_uploader(label = "📎", help=None):
                 pass
 
 
