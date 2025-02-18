@@ -239,7 +239,7 @@ def main():
                    speak_text(response)
 
     # Display chat messages from history on app rerun
-    for message in st.session_state.chat_history:
+    for message in st.session_state.chat_history['1'].messages:
         with st.chat_message("user"):
                    st.write(message.content)
                 
