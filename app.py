@@ -245,8 +245,8 @@ def main():
                   
         with input_col3:
             if st.button(label = "",icon="📎", use_container_width=True):
-                input = st.file_uploader(label = "", label_visibility = "hidden", help=None):
-                    pass
+                input = st.file_uploader(label = "", label_visibility = "hidden", help=None)
+                pass
                     
  
     elif st.session_state.current_screen == "login":
