@@ -232,11 +232,11 @@ def main():
               user_input = transcript.text
                 # Display user message in chat message container
               with st.chat_message("user"):
-                   st.write(user_input)
+                   st.markdown(user_input)
                 # Generate response from the chatbot
               response = generate_response(user_input)
               with st.chat_message("assistant"):
-                   st.write(response)
+                   st.markdown(response)
                    speak_text(response)
                
                   
