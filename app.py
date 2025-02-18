@@ -124,7 +124,8 @@ def startup_screen():
     st.title("WiChat")
     st.subheader("Version 1.0")
     st.session_state.current_screen = "main"  # Switch to main screen after loading
-
+    st.rerun()
+    
 # Login Screen
 def login_screen():
     st.title("Login")
