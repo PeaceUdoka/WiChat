@@ -87,7 +87,7 @@ def get_session_history(session_id):
         st.session_state.chat_history[session_id] = ChatMessageHistory()
     return st.session_state.chat_history[session_id]
 
-retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+retriever = st.session_state.db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
 history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
 
