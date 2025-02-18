@@ -4,8 +4,6 @@ import os
 import pyttsx3
 import streamlit as st
 import time
-import speech_recognition as sr
-from threading import Thread
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains.combine_documents import create_stuff_documents_chain
