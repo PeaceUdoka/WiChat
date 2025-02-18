@@ -204,11 +204,12 @@ def main():
     # Initialize session state
 
     if 'data' not in st.session_state:
-         st.session_state.data ==  get_chunks(load_data(path))
+        
+         st.session_state.data =  get_chunks(load_data(path))
     
     if 'db' not in st.session_state:
          embeddings = embed(st.session_state.data, 'cpu', 'sentence-transformers/all-MiniLM-L6-v2')
-         st.session_state.db == store_data(data, embeddings)
+         st.session_state.db = store_data(data, embeddings)
     
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
