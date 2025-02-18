@@ -210,7 +210,7 @@ def main():
 
         with input_col1:
             
-            if user_input := st.chat_input("Type your message..."):
+            if user_input := input_col1.chat_input("Type your message..."):
             # Display user message in chat message container
                 with st.chat_message("user"):
                    st.markdown(user_input)
@@ -222,7 +222,7 @@ def main():
 
         with input_col2:
           
-            audio_value = st.audio_input(label="", use_container_width=True)
+            audio_value = st.audio_input(label="")
 
             if audio_value:
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
