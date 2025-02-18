@@ -216,7 +216,7 @@ def main():
 
         with input_col2:
             
-            audio_value = st.audio_input()
+            audio_value = st.audio_input(label = "", icon = "🎤")
 
             if audio_value:
               transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
