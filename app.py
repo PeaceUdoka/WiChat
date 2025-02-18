@@ -217,12 +217,12 @@ def main():
        
         if user_input := st.chat_input("Type your message..."):
             with st.chat_message("user"):
-                   st.markdown(user_input)
+                   st.write(user_input)
  
                 # Generate response from the chatbot
             response = generate_response(user_input)
             with st.chat_message("assistant"):
-                   st.markdown(response)
+                   st.write(response)
 
         if st.button("🎙️"):
             if audio_value := st.audio_input(label=""):
@@ -232,11 +232,11 @@ def main():
               user_input = transcript.text
                 # Display user message in chat message container
               with st.chat_message("user"):
-                   st.markdown(user_input)
+                   st.write(user_input)
                 # Generate response from the chatbot
               response = generate_response(user_input)
               with st.chat_message("assistant"):
-                   st.markdown(response)
+                   st.write(response)
                    speak_text(response)
                
                   
