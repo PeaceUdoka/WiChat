@@ -237,7 +237,13 @@ def main():
               with st.chat_message("assistant"):
                    st.write(response)
                    speak_text(response)
-               
+
+    # Display chat messages from history on app rerun
+    for message in st.session_state.chat_history:
+        with st.chat_message():
+                   st.write(message.content)
+                
+
                   
     pg = st.navigation([st.Page("app.py"), st.Page("pages/login.py"), st.Page("pages/signup.py")])
     pg.run()
