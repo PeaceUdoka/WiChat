@@ -322,3 +322,6 @@ def main():
     elif st.session_state.current_screen == "signup":
         # Render signup screen
         signup_screen()
+
+if __name__ == "__main__":
+    main()
