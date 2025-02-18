@@ -217,7 +217,7 @@ def main():
 
         with input_col1:
             
-            user_input := input_col1.chat_input("Type your message..."):
+          if user_input := input_col1.chat_input("Type your message..."):
             with st.chat_message("user"):
                    st.markdown(user_input)
  
