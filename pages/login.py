@@ -22,3 +22,4 @@ def login_screen():
     if back_button:
         st.session_state.current_screen = "startup"  # Go back to startup screen
         st.rerun()
+login_screen()
