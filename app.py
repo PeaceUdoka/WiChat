@@ -241,12 +241,12 @@ def main():
            st.markdown(message["content"])
 
         # Top bar menu
-        col1, col2, col3 = st.columns([1, 1], vertical_alignment="top")
+        col1, col2 = st.columns([1, 1], vertical_alignment="top")
 
         with col1:
             if st.button("Menu"):
                 show_menu()
-        with col3:
+        with col2:
             if st.button("Account"):
                 show_account()
 
