@@ -172,15 +172,17 @@ def speak_text(response):
 # Function to send a message to chatbot
 def send_message(user_input):
     """Sends a message to the chatbot and updates the chat history."""
-    if user_input:
-
+    if prompt := st.chat_input(user_input):
+    # Display user message in chat message container
+        with st.chat_message("user"):
+            st.markdown(prompt)
         # Generate response from the chatbot
         response = st.write(generate_response(user_input))
-
+        with st.chat_message("assistant"):
+            st.markdown(response)
         # Clear the input field
         st.session_state.user_input = ""
 
-        return response
         
 # Function to clear the chat history
 def clear_chat():
@@ -218,10 +220,9 @@ def main():
 
 
         # Welcome Card
-        st.markdown("<div style='background-color: black; padding: 10px; border-radius: 10px;'><h4>Welcome!!! What would you like to know? </h4></div>", unsafe_allow_html=True)
+        st.markdown("<div style='padding: 10px; border-radius: 10px;'><h4>Welcome!!! What would you like to know? </h4></div>", unsafe_allow_html=True)
 
-     
-
+      
         if st.button("Menu"):
                 show_menu()
       
