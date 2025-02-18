@@ -9,3 +9,4 @@ langchain_openai
 openai
 pyttsx3 
 SpeechRecognition
+PyAudio
