@@ -232,14 +232,7 @@ def main():
         # Welcome Card
         st.markdown("<div style='background-color: black; padding: 10px; border-radius: 10px;'><h4>Welcome!!! What would you like to know? </h4></div>", unsafe_allow_html=True)
 
-       # Chat Display
-        session_id = 0  
-        st.session_state.chat_history = get_session_history(session_id).messages
-
-        # Display chat messages from history on app rerun
-        for message in st.session_state.chat_history:
-          with st.chat_message(message["role"]):
-           st.markdown(message["content"])
+     
 
         # Top bar menu
         col1, col2 = st.columns([1, 1], vertical_alignment="top")
