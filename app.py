@@ -242,7 +242,8 @@ def main():
                    st.write(response)
                   
         feedback = st.feedback("thumbs") 
-              
+        if feedback is not None:
+            st.write('Thank you for your feedback')
 
     
                 
