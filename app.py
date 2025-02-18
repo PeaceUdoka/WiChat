@@ -17,6 +17,8 @@ from langchain.chains import create_history_aware_retriever
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
+from streamlit_chat import message
+
 
 
 
@@ -212,10 +214,14 @@ def main():
             # Display user message in chat message container
                 with st.chat_message("user"):
                    st.markdown(user_input)
+                    
+                    message(user_input, is_user=True) 
+ 
                 # Generate response from the chatbot
                 response = generate_response(user_input)
                 with st.chat_message("assistant"):
                    st.markdown(response)
+                   message(response)
 
         with input_col2:
             
@@ -239,7 +245,7 @@ def main():
                 if st.file_uploader(label = "", help=None):
                     pass
 
-
+ 
     elif st.session_state.current_screen == "login":
         # Render login screen
             login_screen()
