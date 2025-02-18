@@ -242,7 +242,7 @@ def main():
            st.markdown(message["content"])
 
         # Top bar menu
-        col1, col2, col3 = st.columns([1, 4, 1])
+        col1, col2, col3 = st.columns([1, 1], vertical_alignment="top")
 
         with col1:
             if st.button("Menu"):
@@ -252,7 +252,7 @@ def main():
                 show_account()
 
         # Input section
-        input_col1, input_col2, input_col3 = st.columns([8, 1, 1])
+        input_col1, input_col2, input_col3 = st.columns([8, 1, 1], vertical_alignment="bottom")
 
         with input_col1:
             user_input = st.text_input("", placeholder="Type your message...", key="input_text")
