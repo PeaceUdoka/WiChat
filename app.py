@@ -151,17 +151,6 @@ def menu_callback(option):
 
 
 
-# Function to speak text
-def speak_text(text):
-    aud = gTTS(text = text,lang = 'en') 
-    aud.save("response.mp3") 
-    audio_file = open("response.mp3", "rb")
-    audio_bytes = audio_file.read()
-    st.audio(audio_bytes)
-
-    
-
-        
 # Function to clear the chat history
 def clear_chat():
     """Clears the chat history."""
@@ -209,7 +198,9 @@ def main():
         if st.button("Menu"):
                 show_menu()
 
-        
+        if feedback := st.feedback("thumbs"):
+            st.write('Thank you for your feedback')
+
        
         if user_input := st.chat_input("Type your message..."):
             with st.chat_message("user"):
@@ -234,16 +225,13 @@ def main():
                    st.write(user_input)
                 # Generate response from the chatbot
               response = generate_response(user_input)
-              resp_aud = client.audio.speech.create(model="tts-1",voice="shimmer",input=response)
-
-              resp_aud.stream_to_file("output.mp3")
+             
               with st.chat_message("assistant"):
                    st.write(response)
+                   resp_aud = client.audio.speech.create(model="tts-1",voice="shimmer",input=response)
+                   resp_aud.stream_to_file("output.mp3")
                   
-        feedback = st.feedback("thumbs") 
-        if feedback is not None:
-            st.write('Thank you for your feedback')
-
+        
     
                 
 
