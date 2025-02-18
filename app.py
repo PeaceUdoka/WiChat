@@ -193,9 +193,9 @@ def main():
      # Display chat messages from history on app rerun
     for message in st.session_state.chat_history:
             with st.chat_message("user"):
-                   st.markdown(user_input)
+                   st.markdown(message.content)
             with st.chat_message("assistant"):
-                   st.markdown(response)
+                   st.markdown(message.content)
                 
     if 'current_screen' not in st.session_state:
       startup_screen()
