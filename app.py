@@ -189,13 +189,6 @@ def main():
     
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
-
-     # Display chat messages from history on app rerun
-    for message in st.session_state.chat_history["1"].messages:
-            with st.chat_message("user"):
-                   st.markdown(message.content)
-            with st.chat_message("assistant"):
-                   st.markdown(message.content)
                 
     if 'current_screen' not in st.session_state:
       startup_screen()
@@ -224,15 +217,9 @@ def main():
 
         with input_col1:
             
-            if user_input := input_col1.chat_input("Type your message..."):
+            user_input = input_col1.chat_input("Type your message...")
             # Display user message in chat message container
-                with st.chat_message("user"):
-                   st.markdown(user_input)
- 
-                # Generate response from the chatbot
-                response = generate_response(user_input)
-                with st.chat_message("assistant"):
-                   st.markdown(response)
+                
 
         with input_col2:
           
@@ -243,14 +230,7 @@ def main():
       
               user_input = transcript.text
                 
-                 # Display user message in chat message container
-              with st.chat_message("user"):
-                   st.markdown(user_input)
-                # Generate response from the chatbot
-              response = generate_response(user_input)
-              with st.chat_message("assistant"):
-                   st.markdown(response)
-                   speak_text(response)
+               
                   
                     
  
@@ -260,6 +240,12 @@ def main():
     elif st.session_state.current_screen == "signup":
         # Render signup screen
             signup_screen()
-   
+ # Display chat messages from history on app rerun
+    for message in st.session_state.chat_history["1"].messages:
+            with st.chat_message("user"):
+                   st.markdown(message.content)
+            with st.chat_message("assistant"):
+                   st.markdown(message.content)
+
 if __name__ == "__main__":
     main()
