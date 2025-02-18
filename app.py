@@ -238,10 +238,10 @@ def main():
 
     elif st.session_state.current_screen == "login":
         # Render login screen
-        login_screen()
+            login_screen()
     elif st.session_state.current_screen == "signup":
         # Render signup screen
-        signup_screen()
+            signup_screen()
    
 if __name__ == "__main__":
     main()
