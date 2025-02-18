@@ -153,13 +153,9 @@ def menu_callback(option):
 
 # Function to speak text
 def speak_text(text):
-    response = client.audio.speech.create(
-    model="tts-1", # the model to use, there is tts-1 and tts-1-hd
-    voice="nova", # the voice to use, there is alloy, echo, fable, onyx, nova, and shimmer
-    input=text, # the text to generate speech from
-    speed=1.0, # the speed of the generated speech, ranging from 0.25 to 4.0
-    )
-    return response.stream_to_file(response.mp3)
+    aud = gTTS(text = text,lang = ‘en’) 
+    aud.save(‘response.mp3’) 
+    st.audio('response.mp3')
 
 
 
