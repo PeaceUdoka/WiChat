@@ -18,7 +18,7 @@ from langchain.chains import create_history_aware_retriever
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
-from streamlit_chat import message
+
 
 
 
