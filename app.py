@@ -175,7 +175,7 @@ def send_message(user_input):
     if user_input:
 
         # Generate response from the chatbot
-        response = st.write_stream(generate_response(user_input))
+        response = st.write(generate_response(user_input))
 
         # Clear the input field
         st.session_state.user_input = ""
