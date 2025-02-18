@@ -113,7 +113,7 @@ def generate_response(query):
 def startup_screen():
     st.image("Wichat2.png", use_container_width=True)
     st.spinner("Loading...")  # Spinner while loading
-    time.sleep(3)
+    time.sleep(10)
     st.title("WiChat")
     st.subheader("Version 1.0")
     st.session_state.current_screen = "main"  # Switch to main screen after loading
