@@ -272,6 +272,18 @@ def main():
     elif st.session_state.current_screen == "signup":
         # Render signup screen
         signup_screen()
-
+    st.markdown(
+    """
+    <style>
+    .stTextInput {
+        margin-top: -10px;
+    }
+    .stButton {
+        margin-top: 5px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+    )
 if __name__ == "__main__":
     main()
