@@ -145,14 +145,6 @@ def menu_callback(option):
     elif option == "Help":
         st.info("Help: Contact support for assistance.")
 
-# Function to handle account callback actions
-def account_callback(option):
-    """Handles account actions (Login/SignUp) and manages screen transitions."""
-    if option == "Login":
-        st.session_state.current_screen = "login"
-
-    elif option == "SignUp":
-        st.session_state.current_screen = "signup"
 
 
 # Function to record audio
