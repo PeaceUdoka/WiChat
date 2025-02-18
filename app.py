@@ -212,10 +212,12 @@ def main():
       
         if st.button("Menu"):
                 show_menu()
+
+        for message in st.session_state.chat_history['1'].messages:
       
 
        
-        if user_input := st.chat_input("Type your message..."):
+          if user_input := st.chat_input("Type your message..."):
             with st.chat_message("user"):
                    st.write(user_input)
  
@@ -224,7 +226,7 @@ def main():
             with st.chat_message("assistant"):
                    st.write(response)
 
-        if audio_value := st.audio_input(label=""):
+          if audio_value := st.audio_input(label=""):
 
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
       
@@ -238,10 +240,7 @@ def main():
                    st.write(response)
                    speak_text(response)
 
-    # Display chat messages from history on app rerun
-    for message in st.session_state.chat_history['1'].messages:
-        with st.chat_message("user"):
-                   st.write(message.content)
+    
                 
 
                   
