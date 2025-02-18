@@ -154,11 +154,12 @@ def menu_callback(option):
 # Function to speak text
 def speak_text(text):
     aud = gTTS(text = text,lang = 'en') 
-    sound_file = aud.save("response.mp3") 
-    Audio(sound_file, autoplay=True)
-    st.audio('response.mp3')
+    aud.save("response.mp3") 
+    audio_file = open("response.mp3", "rb")
+    audio_bytes = audio_file.read()
+    st.audio(audio_bytes)
 
-
+    
 
         
 # Function to clear the chat history
