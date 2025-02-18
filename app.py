@@ -18,7 +18,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
 
-client = OpenAI(api_key = st.secrets["OPENAI_API_KEY"])
+
 
 def load_data(path):
     loader1 = DirectoryLoader(path, glob='*.txt', show_progress=True)
@@ -174,6 +174,9 @@ def main():
     if 'db' not in st.session_state:
          embeddings = embed(st.session_state.data, 'cpu', 'sentence-transformers/all-MiniLM-L6-v2')
          st.session_state.db = store_data(st.session_state.data, embeddings)
+
+    if 'client' not in st.session_state:
+    st.session_state.client = OpenAI(api_key = st.secrets["OPENAI_API_KEY"])
     
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = {}
@@ -219,7 +222,7 @@ def main():
             audio_value = st.audio_input(label="")
 
             if audio_value:
-              transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
+              transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
       
               user_input = transcript.text
                 
