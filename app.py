@@ -19,7 +19,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
 
-api_key = st.secrets(OPENAI_API_KEY)
+api_key = st.secrets["OPENAI_API_KEY"]
 
 def load_data(path):
     loader1 = DirectoryLoader(path, glob='*.txt', show_progress=True)
