@@ -246,7 +246,7 @@ def main():
     
                 
 
-                  
+    st.feedback("thumbs")           
     pg = st.navigation([st.Page("app.py"), st.Page("pages/login.py"), st.Page("pages/signup.py")])
     pg.run()
  
