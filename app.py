@@ -87,24 +87,24 @@ def get_session_history(session_id):
         st.session_state.chat_history[session_id] = ChatMessageHistory()
     return st.session_state.chat_history[session_id]
 
-retriever = st.session_state.db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
-history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
+# --- Response Generation ---
+def generate_response(query):
+    retriever = st.session_state.db.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
-question_answer_chain = create_stuff_documents_chain(llm, prompt)
+    history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
 
-rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+    question_answer_chain = create_stuff_documents_chain(llm, prompt)
 
-conversational_rag_chain = RunnableWithMessageHistory(
+    rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+
+    conversational_rag_chain = RunnableWithMessageHistory(
     rag_chain,
     get_session_history,
     input_messages_key="input",
     history_messages_key="chat_history",
     output_messages_key="answer",
 )
-
-# --- Response Generation ---
-def generate_response(query):
     return conversational_rag_chain.invoke({"input": query}, config={"configurable": {"session_id": "1"}})["answer"]
 
 logo = "Wichat2.png"
