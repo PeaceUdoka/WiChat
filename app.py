@@ -151,7 +151,7 @@ def menu_callback(option):
 # Function to record audio
 def record_audio():
     """Records audio, converts it to text, and updates the input field."""
-    audio_value = st.audio_input("record a voice message to transcribe")
+    audio_value = st.audio_input("")
 
     if audio_value:
       transcript = client.audio.transcriptions.create(model="whisper-1",file = audio_value)
