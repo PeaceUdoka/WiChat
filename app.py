@@ -240,7 +240,7 @@ def main():
 
     # Display chat messages from history on app rerun
     for message in st.session_state.chat_history:
-        with st.chat_message("user):
+        with st.chat_message("user"):
                    st.write(message.content)
                 
 
