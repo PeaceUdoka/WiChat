@@ -217,9 +217,14 @@ def main():
 
         with input_col1:
             
-            user_input = input_col1.chat_input("Type your message...")
-            # Display user message in chat message container
-                
+            user_input := input_col1.chat_input("Type your message..."):
+            with st.chat_message("user"):
+                   st.markdown(user_input)
+ 
+                # Generate response from the chatbot
+            response = generate_response(user_input)
+            with st.chat_message("assistant"):
+                   st.markdown(response)
 
         with input_col2:
           
@@ -229,7 +234,14 @@ def main():
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
       
               user_input = transcript.text
-                
+                # Display user message in chat message container
+              with st.chat_message("user"):
+                   st.write(user_input)
+                # Generate response from the chatbot
+              response = generate_response(user_input)
+              with st.chat_message("assistant"):
+                   st.write(response)
+                   speak_text(response)
                
                   
                     
