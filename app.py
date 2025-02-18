@@ -153,8 +153,9 @@ def menu_callback(option):
 
 # Function to speak text
 def speak_text(text):
-    aud = gTTS(text = text,lang = ‘en’) 
-    aud.save(‘response.mp3’) 
+    aud = gTTS(text = text,lang = 'en') 
+    aud.save("response.mp3") 
+    Audio(sound_file, autoplay=True)
     st.audio('response.mp3')
 
 
