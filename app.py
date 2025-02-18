@@ -223,7 +223,7 @@ def main():
                    message(response)
 
         with input_col2:
-            
+          
             audio_value = st.audio_input(label="")
 
             if audio_value:
@@ -240,8 +240,8 @@ def main():
                    st.markdown(response)
                    speak_text(response)
         with input_col3:
-            with st.expander("📎"):
-                if st.file_uploader(label = "", help=None):
+            with st.button("📎"):
+                if st.file_uploader(label = "", label_visibility = "hidden", help=None):
                     pass
 
  
