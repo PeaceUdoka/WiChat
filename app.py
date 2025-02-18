@@ -239,14 +239,8 @@ def main():
                    speak_text(response)
                
                   
-                    
- 
-    elif st.session_state.current_screen == "login":
-        # Render login screen
-            login_screen()
-    elif st.session_state.current_screen == "signup":
-        # Render signup screen
-            signup_screen()
+    pg = st.navigation([st.Page("login.py"), st.Page("signup.py")])
+    pg.run()
  
 
 if __name__ == "__main__":
