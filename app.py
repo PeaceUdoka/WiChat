@@ -218,7 +218,7 @@ def main():
       
 
         # Input section
-        input_col1, input_col2, input_col3 = st.columns([8,1,1], vertical_alignment="bottom")
+        input_col1, input_col2 = st.columns([8,2], vertical_alignment="bottom")
 
         with input_col1:
             
@@ -250,10 +250,6 @@ def main():
                    st.markdown(response)
                    speak_text(response)
                   
-        with input_col3:
-            if st.button(label = "",icon="📎", use_container_width=True):
-                input = st.file_uploader(label = "", label_visibility = "hidden", help=None)
-                pass
                     
  
     elif st.session_state.current_screen == "login":
