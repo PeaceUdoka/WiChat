@@ -20,10 +20,6 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
 
 
-API_KEY = os.environ["OPENAI_API_KEY"]
-openai.apikey = API_KEY
-
-
 def load_data(path):
     loader1 = DirectoryLoader(path, glob='*.txt', show_progress=True)
     docs = loader1.load()
