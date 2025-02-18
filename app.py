@@ -233,7 +233,7 @@ def main():
                    speak_text(response)
         with input_col3:
             if st.file_uploader():
-                
+                pass
 
 
     elif st.session_state.current_screen == "login":
