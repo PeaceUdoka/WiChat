@@ -6,6 +6,7 @@ import streamlit as st
 import time
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.chat_history import BaseChatMessageHistory
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -83,7 +84,7 @@ contextualize_q_prompt = ChatPromptTemplate.from_messages(
 
 st.session_state.chat_history = {}
 
-def get_session_history(session_id):
+def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in st.session_state.chat_history:
         st.session_state.chat_history[session_id] = ChatMessageHistory()
     return st.session_state.chat_history[session_id]
@@ -226,15 +227,9 @@ def main():
 
      
 
-        # Top bar menu
-        col1, col2 = st.columns([1, 1], vertical_alignment="top")
-
-        with col1:
-            if st.button("Menu"):
+        if st.button("Menu"):
                 show_menu()
-        with col2:
-            if st.button("Account"):
-                show_account()
+      
 
         # Input section
         input_col1, input_col2, input_col3 = st.columns([8, 1, 1], vertical_alignment="bottom")
