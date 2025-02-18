@@ -4,6 +4,8 @@ import os
 import pyttsx3
 import streamlit as st
 import time
+from gtts import gTTS
+from IPython.display import Audio
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.chat_history import BaseChatMessageHistory
@@ -152,10 +154,16 @@ def menu_callback(option):
 
 # Function to speak text
 def speak_text(response):
-    """Converts text to speech using pyttsx3."""
-    engine = pyttsx3.init()
-    engine.say(response)
-    engine.runAndWait()
+
+# Provide the string to convert to speech
+        tts = gTTS(response)
+
+# Save the string converted to speech as a .wav file
+        tts.save('response.wav')
+
+# Play the sound automatically
+        sound_file = 'response.wav'
+        Audio(sound_file, autoplay=True)
 
 
         
