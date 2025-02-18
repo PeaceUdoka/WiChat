@@ -169,17 +169,6 @@ def speak_text(response):
     engine.say(response)
     engine.runAndWait()
 
-# Function to send a message to chatbot
-def send_message(user_input):
-    
-    if prompt := st.chat_input(user_input):
-    # Display user message in chat message container
-        with st.chat_message("user"):
-            st.markdown(prompt)
-        # Generate response from the chatbot
-        response = st.write(generate_response(user_input))
-        with st.chat_message("assistant"):
-            st.markdown(response)
 
         
 # Function to clear the chat history
@@ -243,10 +232,16 @@ def main():
             if st.button("🎤", key="mic_button"):
                 
                 user_input = record_audio()
-                response = send_message(user_input)
-                speak_text(response)
+                 # Display user message in chat message container
+                with st.chat_message("user"):
+                   st.markdown(user_input)
+                # Generate response from the chatbot
+                response = generate_response(user_input)
+                with st.chat_message("assistant"):
+                   st.markdown(response)
+                   speak_text(response)
         with input_col3:
-            if st.button("Send"):
+            if st.button("FIle"):
                 send_message(user_input)
 
 
