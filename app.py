@@ -205,7 +205,7 @@ def main():
 
     # Initialize session state
 
-     if 'data' not in st.session_state:
+    if 'data' not in st.session_state:
          st.session_state.data ==  get_chunks(load_data(path))
     
     if 'db' not in st.session_state:
