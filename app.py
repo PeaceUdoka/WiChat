@@ -232,8 +232,9 @@ def main():
                    st.markdown(response)
                    speak_text(response)
         with input_col3:
-            if st.file_uploader(label = "📎", help=None):
-                pass
+            with sp.expander("📎")
+                if st.file_uploader(label = "", help=None):
+                    pass
 
 
     elif st.session_state.current_screen == "login":
