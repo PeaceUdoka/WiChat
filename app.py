@@ -241,12 +241,13 @@ def main():
               with st.chat_message("assistant"):
                    st.write(response)
                   
+        feedback = st.feedback("thumbs") 
               
 
     
                 
 
-    st.feedback("thumbs")           
+             
     pg = st.navigation([st.Page("app.py"), st.Page("pages/login.py"), st.Page("pages/signup.py")])
     pg.run()
  
