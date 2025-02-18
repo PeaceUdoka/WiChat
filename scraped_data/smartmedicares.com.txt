@@ -1,0 +1,55 @@
+ Hospital Appointment System
+Streamlined Scheduling
+User-Friendly Interface
+
+
+
+
+
+
+
+
+
+
+
+Patients' data are recorded in an e-database system. These are photos, test results, diagnosis, prognosis, drugs and administration are stored for authorized access only.  Healthcare providers can systematically access and share records in the treatment and care chain.
+Our system allows patients to book appointments before arrival. It reduces waiting time, doctors’ overtime, and nurses can manage pre-clinic activities. It notifies patients of their scheduled appointments. Encourages fair treatment as class is not considered in booking. .
+Consider the possibility of handling health workers' biodata, employment data, attendance, working hours, and payroll. A system integrated into your HMS calculates performance, shift, rota, payments, and reimbursement. SmartMedicare gives you control over who has access to private information and places within the facility.
+Smart Medicare has been designed to reduce waiting time while enhancing patient care by providing hospital staff with accurate and timely patient information. This all-in-one hospital management system comes with integrated modules such as Appointment, Billing, Inventory, Pharmacy, Laboratory, Ambulance etc
+It is a long established fact that a reader will be distracted.
+It is a long established fact that a reader will be distracted.
+It is a long established fact that a reader will be distracted.
+It is a long established fact that a reader will be distracted.
+Patients' data are recorded in an e-database system. These are photos, test results, diagnosis, prognosis, drugs and administration are stored for authorized access only.  Healthcare providers can systematically access and share records in the treatment and care chain.
+Our system allows patients to book appointments before arrival. It reduces waiting time, doctors’ overtime, and nurses can manage pre-clinic activities. It notifies patients of their scheduled appointments. Encourages fair treatment as class is not considered in booking. .
+Consider the possibility of handling health workers' biodata, employment data, attendance, working hours, and payroll. A system integrated into your HMS calculates performance, shift, rota, payments, and reimbursement. SmartMedicare gives you control over who has access to private information and places within the facility.
+It helps to sum up all the expenses of a patient at a time and produce a complete bill at the end of the consultation. This saves time and effort for each department, as they need not produce separate bills.
+The HMS supports ambulance and paramedics services records to aid emergency management. Associated services such as first responder and call services in emergency situations are also provided. Administrators, personnel and users of emergency services benefit from the system.
+SmartMedicare streamlines inventory operations, saving you time and money while improving patient care. The service facilitates the tracking of devices, consumables, drugs, & materials. Improve intra/interdepartmental communication, eliminate theft, meet regulatory compliance, and increase efficiency through better inventory management.
+A smart technology for beds and wards management. Save time with access to beds, track patients' records based on bed allocations, colour-code the beds for easy management. Get notifications when a bed is empty or occupied. With these, the wards and beds are better managed for quality service.
+This system aids the information of blood pints handling in the blood bank. Keeps record of in-patients, out-patients, and volunteers. Managers can key in the parameters of blood tests conducted on each pint received by the bank.
+Manage your lab by ensuring all doctor-ordered investigations or tests are sent directly to your lab. The system reduces human errors as data is stored in the system. Patient’s history reports can be accessed and reviewed anytime. Real time.
+SmartMedicare automates your pharmacy and drugs dispensing workflow. Let’s help your pharmacists review doctor’s orders, prepare the drugs, control the stock, handle the billing, provide counselling services and other dispensing tasks.Go wit us to stave off medicine fraud, improve service delivery for a better patient care.
+The system generates a unique patient ID. With the ID, healthcare providers can better manage the patient. Patients' access to other facilities is well transitioned.
+Get real-time patient data, and manage as required with the Statistics feature of our HMS. Cull up demographic information, medical history and treatment, healthcare providers record and any administrative information. Access data to aid your business survey and planning.
+Streamline your hospital appointments and access valuable insights into patient appointments. The Smart Medicare hospital management system notifies you promptly of available slots, enabling staffs to manage appointments swiftly.
+The Smart Medicare hospital appointment scheduling solution changes the way healthcare appointments work. With a focus on efficiency, it eliminates the complexities often associated with booking.
+Navigating through the Smart Medicare hospital appointment management system is as simple as it gets. Designed with usability in mind, our interface is intuitive and easy to understand. With a clean layout and straightforward navigation, our interface ensures that everyone can efficiently manage appointments without confusion.
+
+
+
+
+
+
+
+
+
+
+
+Switching to SmartMedicare enables us to use a system tailored to our specific needs and our feature requests are attended to immediately.
+
+
+REGISTERED FACILITIES
+EXPERT DOCTORS
+CONSULATIONS
+HAPPY PATIENTS

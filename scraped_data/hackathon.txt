@@ -1,0 +1,54 @@
+ 
+What We Expect
+
+List and Description of each API
+
+Submit Your Final Project
+The Omeife AI App is a revolutionary new AI-powered large language model that can generate text in a variety of styles and formats.
+Company
+Privacy Policy
+Contact Us
++2349137160848
++2349131573923
++447441426012
+info@uniccongroup.com
+lossless@uniccongroup.com
+sales@uniccongroup.com
+Website Links
+Home
+Features
+Pricing
+About Us
+Contact Us
+Location
+3rd Floor, Lanre Shittu House, Mabushi, Abuja. 900108
+28 Kingshold Road, London, England, E97JF.
+© 2023 Omeifeai. All rights reserved.
+We invite you to unleash your creativity and technical skills in the Building with Omeife AI hackathon!
+Home
+Features
+Pricing
+About Us
+Contact Us
+Hackathon
+Innovation
+Functionality
+Impact
+Collaboration
+Presentation
+Translation system
+Speech Synthesis
+Speech Synthesis
+3 Steps to complete Omeife AI Hackathon:
+This is your opportunity to explore the power of Omeife’s cutting-edge AI APIs and bring your innovative ideas to life.
+Count Down:3 Days : 0 HOURS : 6 MINUTES : 3 SECONDS
+We’re looking for solutions that highlight the versatility of our APIs in domains such as language translation, speech synthesis, speech recognition and beyond. Whether your project is practical, artistic, or exploratory, we want to see how you push the boundaries of what’s possible with Omeife AI.
+Projects that creatively leverage Omeife AI APIs to solve real-world problems or introduce novel solutions
+ Functional prototypes or demos that showcase how Omeife AI APIs enhance your project.
+Ideas that address significant challenges or provide unique value to users, industries, or communities.
+Teams that effectively collaborate to combine technical expertise, design thinking, and creativity.
+Clear, concise, and compelling demonstrations of your project, including how Omeife AI was utilized.
+A text-to-text translation system that translates text from one language to another, including local dialects and pidgin. This can be a valuable tool for people who need to communicate with people who speak different languages such as Yoruba, Hausa, Igbo, and Pidgin.
+Our Text-to-Speech (Speech Synthesis) API is designed to enhance your digital communication, making it easy to connect with English, Hausa, and Pidgin-speaking users.
+A speech-to-text (STT) system supporting English and Hausa for transcription and recognition tasks.
+

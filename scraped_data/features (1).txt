@@ -1,0 +1,49 @@
+ 
+Current Features
+Speech Synthesis
+Knowledge Assistant
+Text Translation
+Subtitle Generation
+Subtitle Translation
+
+Future Features
+Live Translation
+Location
+Identity Verification
+Ometaverse
+The Omeife AI App is a revolutionary new AI-powered large language model that can generate text in a variety of styles and formats.
+Company
+Privacy Policy
+Contact Us
++2349137160848
++2349131573923
++447441426012
+info@uniccongroup.com
+lossless@uniccongroup.com
+sales@uniccongroup.com
+Website Links
+Home
+Features
+Pricing
+About Us
+Contact Us
+Location
+3rd Floor, Lanre Shittu House, Mabushi, Abuja. 900108
+28 Kingshold Road, London, England, E97JF.
+© 2023 Omeifeai. All rights reserved.
+Home
+Features
+Pricing
+About Us
+Contact Us
+Hackathon
+Our Pidgin Text-to-Text Translation API and Pidgin Text-to-Speech (Speech Synthesis) API are designed to enhance your digital communication, making it easy to connect with Pidgin-speaking users.
+The Omeife AI app can act as a knowledge assistant, providing information on a variety of topics like biology, business, marketing, finance, philosophy and so much more.
+The Omeife AI app can translate text from one language to another, including local dialects and pidgin. This can be a valuable tool for people who need to communicate with people who speak different languages such as French, Arabic, Yoruba, Hausa, Igbo and Swahili.
+Our AI model can generate subtitles for your audios and videos.
+Translate audio/video subtitles between the languages we support.
+Our AI to translate live audio to any language the user chooses in real time.
+Implement maps in our local languages using our AI models.
+Create and deploy models for image matching, voice recognition and face recognition.
+Integrate virtual reality using UNICCON VR.
+
