@@ -224,7 +224,7 @@ def main():
             with st.chat_message("assistant"):
                    st.markdown(response)
 
-       if audio_value := st.audio_input(label=""):
+        if audio_value := st.audio_input(label=""):
 
               transcript = st.session_state.client.audio.transcriptions.create(model="whisper-1",file = audio_value)
       
