@@ -1,3 +1,5 @@
+
+
 from kivymd.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.label import MDLabel
@@ -41,7 +43,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
 
-
+import pyttsx3
 import os
 #os.environ['OPENAI_API_KEY'] = key
 
@@ -164,8 +166,8 @@ class StartupScreen(Screen):
 
 # Login Screen
 class LoginScreen(Screen):
-    def _init_(self, **kwargs):
-        super()._init_(**kwargs)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
         # Outer BoxLayout to center the form
         outer_layout = BoxLayout(orientation="vertical", spacing=10, size_hint=(None, None),
@@ -197,8 +199,8 @@ class LoginScreen(Screen):
 
 # Signup Screen
 class SignupScreen(Screen):
-    def _init_(self, **kwargs):
-        super()._init_(**kwargs)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
         # Outer BoxLayout to center the form
         outer_layout = BoxLayout(orientation="vertical", spacing=10, size_hint=(None, None), size=("300dp", "350dp"))
@@ -246,8 +248,8 @@ class SignupScreen(Screen):
 
 # Main Chatbot Screen
 class ChatScreen(Screen):
-    def _init_(self, **kwargs):
-        super()._init_(**kwargs)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.mic_button = MDIconButton(text="🎤")  # Example of defining the mic_button
         layout = BoxLayout(orientation='vertical')
         self.card_color = (1, 1, 1, 1)
@@ -271,7 +273,7 @@ class ChatScreen(Screen):
         # Welcome Card
         md_card = MDCard(size_hint=(None, None), size=("700dp", "70dp"),
                          pos_hint={"center_x": 0.5, "center_y": 0.8}, elevation=5)
-        md_label = MDLabel(text="Welcome!!! WiChat wants to know what's on your mind",
+        md_label = MDLabel(text="Welcome!!! Ask me anything about the WorldBank IDEAS project!",
                            halign="center", theme_text_color="Secondary", bold=True)
         md_card.add_widget(md_label)
         layout.add_widget(md_card)
@@ -432,10 +434,10 @@ class ChatScreen(Screen):
                 self.input_text.text = text
             except sr.UnknownValueError:
                 print("Could not understand audio.")  # Debugging output
-                self.input_text_input("Could not understand audio.")
+                self.update_text_input("Could not understand audio.")
             except sr.RequestError as e:
                 print(f"Speech Recognition service error: {e}")  # Debugging output
-                self.input_text_input("Error with speech recognition service.")
+                self.update_text_input("Error with speech recognition service.")
 
             self.mic_button.icon = "microphone"  # Reset icon
 
