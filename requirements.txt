@@ -1,6 +1,5 @@
-streamlit
-ipython
-gTTS
+python3
+gradio
 langchain
 transformers
 langchain-community
@@ -9,4 +8,11 @@ sentence-transformers
 faiss-cpu
 langchain_openai
 openai
-
+kivy
+kivymd
+tf-keras
+SpeechRecognition
+ipython
+gTTS
+pyttsx3
+pyAudio
